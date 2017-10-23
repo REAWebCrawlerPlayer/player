@@ -1,0 +1,275 @@
+/* GERAL */
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #4d4d4d;
+}
+
+h1, h2, h3{
+    margin: 0;
+    font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.botao{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: blueviolet;
+    font-size: .9em;
+    border-radius: 6px; /* arredondar a borda */
+}
+
+/* ESTILOS DE NAVEGAÇÃO */
+
+
+nav{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: #4d4d4d;*/
+    background-color: yellow;
+}
+
+nav > a {
+   text-decoration: none;/*tirar o sublinhado*/
+    color: black;
+    /*color: #f1f1f1;*/
+    font-size: 35px;
+    /*font-family: Pacifico, Helvetica, serif;*/
+    font-family: 'Monofett', cursive;
+}
+
+/* estilo da lista */
+nav ul{
+    list-style: none;
+    padding: 0; /* tirar espaçamento ao redor da lista */
+    display: flex; /* container flex */
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* largura definida em 100 por cento */
+}
+
+nav ul li { /* selecionado cada item que esta dentro da lista */
+    width: 100%;
+    text-align: center;
+
+}
+
+nav ul li a{ /* alteração de estilo dos links dentro de cada elemento dentro da lista */
+    display: inline-block; /* faz com que eu possa alterar o espaçamento interno dos links na lista */
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ESTILO DO CABEÇALHO */
+
+header{
+    margin-top: 10px;
+    background-image: url('fundo.jpg'); /* definir imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* para que a imagem não repita em nenhum dos eixos */
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* espaço interno de 20 pixels */    
+}
+
+header p{ /* editar paragrafo do cabeçalho */
+    margin-bottom: 2em; /* espaçamento externo do elemento */
+}
+
+
+/* SEÇÃO SOBRE */
+
+#sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: blueviolet;
+    color: #f1f1f1;
+}
+
+#sobre p{ /* edição do parágrafo */
+    margin-bottom: 1em;
+    max-width: 1000px; /* defini uma largura máxima de 1000 pixels */
+
+}
+
+#sobre .botao{
+        background-color: #f1f1f1;
+        color: #4d4d4d;
+}
+
+/* SEÇÃO APOIO */
+
+#apoio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* para não se misturar com a seção acima */
+    padding: 0 20px 20px;
+
+}
+
+#apoio h2{
+
+    margin-bottom: 20px;
+}
+
+#apoio img{
+    padding: 10px;
+    width: 50%;
+}
+
+/* SEÇÃO CONTATO */
+
+#contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: lightgreen;
+    padding: 0 20px 20px;
+}
+
+#contato h2{
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* RODAPÉ */
+
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+}
+
+footer a{
+    color: #f1f1f1;
+    font-family: helvetica;
+    font-style: oblique;
+}
+
+/* MEDIA QUERIEs */
+
+@media screen and (min-width: 768px) {
+    /* navegação */
+    nav {
+
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul{
+        flex-direction: row;
+        width: 70%;
+    }
+
+    /* cabeçalho */
+
+    header{
+        height: 600px; /* declara esse padrão para naegadores que não reconheçam o viewport high */
+        height: 60vh; /* viewport high, altura do elemento ser de 60% */
+        justify-content: center;
+    }
+
+    /* Sobre */
+
+    #sobre {
+        height: 250px;
+        height: 30vh;
+        justify-content: center;
+        min-height: 250px; /* se a tela encolher, o limite é até que encolha a 250 px */
+
+    }
+
+    /* Serviços */
+
+    #servicos{
+        flex-direction: row;
+        flex-wrap: wrap; /* itens quebrarão para uma nova linha se o tamanho for maior */
+        align-items: flex-start;
+        max-width: 1000px; /* para evitar que expanda demais */
+        margin: 0 auto; /* auto para calcular automaticamente o valor para direita e para esquerda */
+
+    }
+
+    #servicos h2{
+        text-align: center;
+        width: 100%;
+    }
+
+    #servicos div{
+        flex-grow: 1; /*define a proporção com que elas crescem */
+        flex-basis: 150px; /* é equivalente a largura máxima dos elementos, no caso, 150 pixels */
+
+    }
+
+        /* Contato */
+
+    #contato{
+
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around; /* com espaço ao redor */
+        max-width: 10000px;
+        margin: 0 auto;
+    }
+
+    #contato h2, #contato p{
+        width:50%;
+    }
+}
+
+/* #miniatura{
+
+    padding: 15px 0; 
+    margin-right: 5%;   
+    display: inline-table;
+    background-color: #f1f1f1;
+    float: left, width: 30%;
+} */
+
+#miniatura a{
+
+    display: inline-block; /* faz com que eu possa alterar o espaçamento interno dos links na lista */
+    padding: 20px 0;
+    width: 60%;
+    font-family: 'PT Sans Narrow', sans-serif;;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+#miniatura ul{
+    list-style: none;
+}
+
+#miniatura li{
+
+    display: inline;
+    float: left;
+    width: 20%;
+
+}
+
+#miniatura li p{
+    text-align: center;
+}
+
+#player h2{
+    color: black;
+    font-family: helvetica;
+}
